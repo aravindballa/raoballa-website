@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-personal-starter-blog",
+  "name": "raoballa-website",
   "private": true,
-  "description": "A personal blog starter for a blog powered by Netlify CMS, based on the default blog starter",
+  "description": "A personal blog Rao balla",
   "version": "1.0.0",
-  "author": "Thomas Wang <thomas@wang.sh>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Aravind Balla <bsaaravind@gmail.com>",
   "dependencies": {
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
@@ -61,7 +58,6 @@
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "serve": "gatsby serve"
   }
 }
