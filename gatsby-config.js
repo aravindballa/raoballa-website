@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Rao Balla`,
+    title: `రావు బల్లా`,
     author: `Rao Balla`,
     description: `Telugu writer based in Hyderabad`,
     siteUrl: `https://raoballa.com/`,
@@ -13,7 +13,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -32,7 +32,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [".mdx", ".md"],
+        extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -65,19 +65,19 @@ module.exports = {
         // trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        // edit below
-        icon: `content/assets/gatsby-icon.png`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `Gatsby Starter Blog`,
+    //     short_name: `GatsbyJS`,
+    //     start_url: `/`,
+    //     background_color: `#ffffff`,
+    //     theme_color: `#663399`,
+    //     display: `minimal-ui`,
+    //     // edit below
+    //     icon: `content/assets/gatsby-icon.png`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -101,15 +101,19 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
+              return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   data: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.body }],
-                })
-              })
+                  custom_elements: [
+                    {
+                      'content:encoded': edge.node.body,
+                    },
+                  ],
+                });
+              });
             },
             query: `
             {
@@ -130,11 +134,12 @@ module.exports = {
               }
             }
             `,
-            output: "/rss.xml",
+            output: '/rss.xml',
             title: `Gatsby RSS feed`,
           },
         ],
       },
     },
+    'gatsby-plugin-postcss',
   ],
-}
+};
